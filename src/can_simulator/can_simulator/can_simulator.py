@@ -59,11 +59,11 @@ class CANBusSimulator(Node):
         state_name = state_names.get(msg.state, 'UNKNOWN')
         mode_name = mode_names.get(msg.mission_mode, 'UNKNOWN')
         self.get_logger().debug(
-            'Mission state: %s, mode: %s', state_name, mode_name)
+            f'Mission state: {state_name}, mode: {mode_name}')
 
     def inspection_result_callback(self, msg: String):
         self.get_logger().info(
-            'Inspection result: %s', msg.data)
+            f'Inspection result: {msg.data}')
 
 
 def main(args=None):
